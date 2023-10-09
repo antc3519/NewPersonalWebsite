@@ -1,0 +1,25 @@
+/*EXPERIENCE*/
+
+.allow-overflow{
+    overflow: visible !important;
+}
+
+img {
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 80%;
+    min-width: min(100%, 300px);
+    max-width: 1000px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}

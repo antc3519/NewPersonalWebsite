@@ -1,0 +1,79 @@
+/*CONTACT*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.expanding-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 25px;
+    background-color: #f7f5ec;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    font-family: Montserrat;
+    width: fit-content;
+    transform-origin: center;
+    transform: scale(1.25);
+}
+
+.text {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+}
+.text h2 {
+    margin-top: 0;
+}
+.container img {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    margin: 0 0 25px 25px;
+    z-index: 1;
+    position: relative;
+    border-radius: 50%;
+}
+.card {
+    background-color: white;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+    background-color: #336699;
+    left: 0;
+}
+.card h3 {
+    color: white;
+    line-height: 30px;
+    margin: 0 0 5px 0;
+}
+.card .social {
+    padding-bottom: 10px;
+}
+.card .social li {
+    display: inline-block;
+}
+.card .social li a {
+    display: block;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+.card .social li a:hover {
+    color: #1369ce;
+    background-color: #f7f5ec;
+}
+
+.footer {
+    margin-top: auto;
+}

@@ -1,0 +1,107 @@
+/*PROJECTS*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.expanding-child {
+    height: initial !important;
+    padding-bottom: 15px;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.projects {
+    background-image:url(../img/projectBackground.jpg);
+    background-repeat: repeat;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto)); /* see notes below */
+    grid-auto-rows: minmax(350px, auto);
+    grid-gap: 1rem;
+    padding: 0 15px;
+}
+.card {
+    /*height: 200px;*/
+    /*background: red;*/
+    border: 2px solid #e7e7e7;
+    border-radius: 4px;
+    padding: .5rem;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    /* -webkit-box-orient: vertical; */
+    /* -webkit-box-direction: normal; */
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    color: #5d5e5e;
+    border-radius:7px;
+    background-size:contain;
+    background-repeat:round;
+    max-width: 300px;
+}
+.card * {
+    margin:0;
+    padding:0;
+}
+.card img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    float: left;
+}
+.card a {
+    position: absolute;
+    z-index: 4;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: block;
+}
+.infoCircle {
+    position:absolute;
+    text-align:center;
+    display:flex;
+    flex-direction: row;
+    background-image: url(../img/overlay.svg);
+    background-position: 50% 50%;
+    background-size: 160px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    perspective: 170px;
+    transform:rotateX(0deg) rotateY(0deg);
+    transition: transform 150ms ease-out;
+    justify-content:center;
+    align-items:center;
+}
+.card a:hover .infoCircle{
+    perspective: 170px;
+    transform: rotateX(0deg) rotateY(90deg);
+}
+.infoCircle h2, h3 {
+    display: block;
+    font-family: Colorado, sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 19px;
+    color: #414042;
+    margin:0;
+    font-weight:100;
+}
+.infoCircle h3 {
+    color: #b1b3b6;
+}

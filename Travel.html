@@ -1,0 +1,121 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travels</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="./extra/jVectorMap/jquery-jvectormap-2.0.5.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./extra/jVectorMap/jquery-jvectormap-2.0.5.min.js"></script>
+
+    <!--- World SVG Path Info file in jVectorMap supported format-->
+    <script src="./extra/jVectorMap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <link rel="stylesheet" href="./main.css" />
+    <script type="text/javascript" src="main.js"></script>
+
+</head>
+<body onload="loaded()" style="background-color: rgb(80, 80, 80);overflow-x:hidden;overflow-y:hidden">
+
+    <header>
+        <div class="transition" id="transition" style="clip-path:circle(0% at 0% 0%)"></div>
+        <div class="transition" id="transition2" style="clip-path:circle(150% at 100% 100%)"></div>
+        <div class="navBar">
+            <ul>
+                <li><a href="javascript:delay('Index.html')">Home</a></li>
+                <li><a href="javascript:delay('About.html')">About</a></li>
+                <li><a href="javascript:delay('#')">Travels</a></li>
+                <li><a href="javascript:delay('Projects.html')">Projects</a></li>
+                <li><a href="javascript:delay('Contacts.html')">Contacts</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container" style="position: fixed;top: 0;width: 100vw;height: 100vh;padding-top: 90px;padding-bottom: 90px;box-sizing: border-box;">
+        <div id="world-map" style="width: 90%;height: 100%;margin: auto; border: 5px solid white"></div>
+    </div>
+
+    <script>
+        $(function () {
+
+            var points = [
+                { latLng: [41.9, 12.5], name: 'Vatican City', status: 'marker' },
+                { latLng: [55.6, 13.0], name: 'Malmo', status: 'marker' },
+                { latLng: [52.5, 13.4], name: 'Berlin', status: 'marker' },
+                { latLng: [45.4, 12.3], name: 'Venice', status: 'marker' },
+                { latLng: [41.9, 12.5], name: 'Rome', status: 'marker' },
+                { latLng: [55.7, 12.6], name: 'Copenhagen', status: 'marker' },
+                { latLng: [48.9, 2.4], name: 'Paris', status: 'marker' },
+                { latLng: [43.8, 11.3], name: 'Florence', status: 'marker' },
+                { latLng: [-22.9, - 43.2], name: 'Rio De Janeiro', status: 'marker' },
+                { latLng: [49.6, 6.1], name: 'Luxembourg', status: 'marker' },
+                { latLng: [43.1, -79.0], name: 'Niagara Falls', status: 'marker' },
+                { latLng: [42.4, -71.1], name: 'Boston', status: 'marker' },
+                { latLng: [40, -75.2], name: 'Philadelphia', status: 'marker' },
+                { latLng: [40.7, -74], name: 'New York City', status: 'marker' },
+                { latLng: [41.5, -81.7], name: 'Cleveland', status: 'marker' },
+                { latLng: [39.1, -84.5], name: 'Cincinnati', status: 'marker' },
+                { latLng: [35.8, -83.6], name: 'Pidgeon Forge', status: 'marker' },
+                { latLng: [36.2, -86.8], name: 'Nashville', status: 'marker' },
+                { latLng: [35.1, -90], name: 'Memphis', status: 'marker' },
+                { latLng: [32.8, -96.8], name: 'Dallas', status: 'marker' },
+                { latLng: [38.9, -77], name: 'Washington D.C.', status: 'marker' },
+                { latLng: [28.5, -81.4], name: 'Orlando', status: 'marker' },
+                { latLng: [25.8, -80.2], name: 'Miami', status: 'marker' },
+                { latLng: [-20.3, -40.3], name: 'Vitoria', status: 'marker' }
+            ];
+
+            $('#world-map').vectorMap({
+                map: 'world_mill',
+                markers: points.map(function (h) { return { name: h.name, latLng: h.latLng } }),
+                series: {
+                    markers: [{
+                        attribute: 'image',
+                        scale: {
+                            'marker': './img/Travel/marker.png'
+                        },
+                        values: points.reduce(function (p, c, i) { p[i] = c.status; return p }, {}),
+                    }],
+                    regions: [{
+                        scale: {
+                            visited: '#99c2ff',
+                            unvisited: '#f2f2f2'
+                        },
+                        attribute: 'fill',
+                        values: {
+                            "US": 'visited',
+                            "IT": 'visited',
+                            "BR": 'visited',
+                            "FR": 'visited',
+                            "SE": 'visited',
+                            "DK": 'visited',
+                            "DE": 'visited',
+                            "LU": 'visited',
+                            "IT": 'visited',
+                        },
+                        legend: {
+                            horizontal: true,
+                            title: 'Status'
+                        }
+                    }],
+                },
+                scaleColors: ['#C8EEFF', '#0071A4'],
+                normalizeFunction: 'polynomial',
+                hoverOpacity: 0.7,
+                hoverColor: false,
+                markerStyle: {
+                    initial: {
+                        fill: '#F8E23B',
+                        stroke: '#383f47'
+                    }
+                },
+                backgroundColor: '#383f47'
+            });
+        });
+    </script>
+</body>
+</html>

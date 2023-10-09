@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <body onload="loaded()">
+
+        <header>
+            <div class="transition" id="transition"></div>
+            <div class="transition" id="transition2" style="clip-path:circle(150% at 100% 100%); opacity:1;"></div>
+        </header>
+
+        <div class="navBar sticky-child">
+            <ul>
+                <li><a href="javascript:delay('Index.html')">Home</a></li>
+                <li><a href="javascript:delay('About.html')">Story</a></li>
+                <li class="dropdown">
+                    <a href="javascript:delay('Experience.html')">Resume</a>
+                    <a class="subMenu" target="_blank" href="https://github.com/antc3519">Github</a>
+                </li>
+                <li><a href="javascript:delay('Projects.html')">Projects</a></li>
+                <li><a href="javascript:delay('Contacts.html')">Contacts</a></li>
+                
+                <div class="shadow"></div>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="grouping">
+                <div style="position: relative">
+                    <img class="headImg" src="./img/projects/julyHeader.JPG"/>
+                    <div class="infoCircle">
+                        <span>
+                            <h2>4th of July</h2>
+                            <h3>Surprise</h3>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <div class="columns">
+                        <p>This was a cute project I made for my girlfriend to cheer her up when she spent July 4th away from home. I thought it was an interesting way to "surprise" someone without being able to see them in person and she fairly enjoyed it despite the <i>unique</i> way I gave it to her.</p>
+                        <p>This mini interactable game was made using Unity within a few hours, it was also a learning experience as it was my first attempt to make fireworks in Unity, and I think I did a pretty good job of it.</p>
+                    </div>
+                    <div class="columns">
+                        <p>The game can be played through the interface below, however if that does not work due to your browser you can always download it below and see how it works! <br /><br /><a href="njkeyclub.org" class="download">DOWNLOAD</a></p>
+                    </div>
+
+
+                    <iframe id="Iframe" src="extra/project/webgl/index.html" allowtransparency="true" onload="this.style.height = (this.contentDocument.body.
+                    scrollHeight + 45) +'px';" scrolling="no" style="width:100%;border:none;"></iframe>
+                </div>
+            </div>
+        </div>
+        
+
+        <img />
+    </body>
+</html>
