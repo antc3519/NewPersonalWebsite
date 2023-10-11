@@ -18,6 +18,8 @@
     <title>Home</title>
   </head>
 
+  
+
   <body onload="loaded()">
     
     <header>
@@ -44,7 +46,7 @@
         </div>  
         <div class="expanding-child home-main">
           <div class="row">
-            <div class="column center">
+            <div class="column center" id="headText">
               <h1 style="font-weight: bold;">Anthony Caruso</h1>
               
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" zoomAndPan="magnify" viewBox="0 0 375 112.499997" height="112.5" preserveAspectRatio="xMidYMid meet" version="1.0">
@@ -70,7 +72,7 @@
             <div class="column" style="flex: 30%;">
               <img src="./img/techUnited1.png">
             </div>
-            <div class="column center">
+            <div class="column center" id="mobileFlip">
               <h1 style="font-weight: bold;">About Me</h1>
               <p style="font-weight: 300;">
                 I am a Junior at NJIT, interested in everything from coding to 3D printing to business.
@@ -101,7 +103,12 @@
           <h1>© Anthony Caruso 2023 | <a href="#top">Back to top of page &#129121;</a></h1>
         </div>
       </div>
-
     </main>    
   </body>
+  
+  <script>
+    if (window.innerHeight > window.innerWidth) {
+      swapDiv(document.getElementById("mobileFlip"));
+    }
+  </script>
 </html>

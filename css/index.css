@@ -79,4 +79,30 @@
     box-shadow: 2px -2px 20px 7px #0000004a;
 }
 
+/*MOBILE STUFF*/
 
+@media screen and (orientation: portrait) {
+    .home-main {
+        background-image: url(../img/homeBackground1Mobile.png);
+    }
+    .home-about {
+        background-image: url(../img/homeBackground2Mobile.png);
+    }
+    .home-project {
+        background-image: url(../img/homeBackground3Mobile.png);
+    }
+    .row {
+        display: grid !important;
+        grid-template-rows: repeat(2, 1fr)
+    }
+    .headshot {
+        height: 120% !important;
+        width: initial !important;
+    }
+    .full-content img {
+        width: 100%;
+    }
+    #headText {
+        transform: scale(1.5);
+    }
+}

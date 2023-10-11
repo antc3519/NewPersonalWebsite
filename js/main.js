@@ -23,7 +23,6 @@ window.onbeforeunload = function unloadCheck() {
 
 function loaded() {
 
-    console.log(localStorage.getItem('isNavigating'));
     var transition = document.getElementById("transition2");
     transition.style = "clip-path:circle(0% at 100% 100%);";
     if (location.pathname.substring(location.pathname.lastIndexOf("/") + 1) == "") {
@@ -41,4 +40,8 @@ function aboutMenu(thisMenu, newMenu) {
     sound.play();
     document.getElementById(thisMenu).style.display = "none";
     document.getElementById(newMenu).style.display = "initial";
+}
+
+function swapDiv(elem) {
+    elem.parentNode.insertBefore(elem, elem.parentNode.firstChild);
 }
